@@ -1,0 +1,23 @@
+query_from_memory = true  # 是否从内存中查询数据
+
+[log]
+level = "info"
+output = "console"
+
+[[write]]
+type = "http"
+url = "http://your-server-endpoint"
+[[write]]
+type = "mq"
+broker = "mq://your-mq-broker"
+topic = "your-topic"
+
+
+
+[[plugin]]
+name = "example_plugin"
+report_interval = 1  # 单位：秒，默认值
+
+[[plugin]]
+name = "another_plugin"
+report_interval = 3  # 单位：秒
